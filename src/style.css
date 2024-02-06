@@ -9,10 +9,15 @@ body{
   place-content: center;
   height: 100vh;
   width: 100vw;
+  gap: 20px;
 }
 
 ul{
   list-style: none;
+}
+
+.input-container{
+  display: flex;
 }
 
 .task-item{
@@ -21,5 +26,16 @@ ul{
 }
 
 .task-remove{
-  justify-self: flex-end;
+  padding-left: 20px;
+  margin-left: auto;
+}
+
+.task-done{
+  text-decoration: line-through;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.438);
+}
+
+.task-add{
+  padding-left: 20px;
 }

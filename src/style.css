@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+ul{
+  list-style: none;
+}
+
+.task-item{
+  display: flex;
+  background-color: rgb(128, 128, 255);
+}
+
+.task-remove{
+  justify-self: flex-end;
+}

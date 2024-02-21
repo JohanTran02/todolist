@@ -9,25 +9,61 @@ body{
   place-content: center;
   height: 100vh;
   width: 100vw;
-  gap: 20px;
+  background-color: #2d87dd;
 }
 
-ul{
-  list-style: none;
+.todo-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
 }
 
 .input-container{
   display: flex;
+  padding: 20px;
+  gap: 20px;
+  background-color: white;
+}
+
+.input-container > button{
+  padding: 10px;
+  background-color: #2448bc;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.task-container{
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  list-style: none;
+  background-color: white;
+  padding: 15px;
+}
+
+.task-container::-webkit-scrollbar{
+  display: none;
 }
 
 .task-item{
   display: flex;
-  background-color: rgb(128, 128, 255);
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #c2dff5;
 }
 
 .task-remove{
-  padding-left: 20px;
-  margin-left: auto;
+  width: 20px;
+  margin:0 10px 0 auto;
+  background-color: #0c3973;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .task-done{
@@ -36,6 +72,7 @@ ul{
   color: rgba(0, 0, 0, 0.438);
 }
 
-.task-add{
-  padding-left: 20px;
+.task-desc{
+  margin-left: 15px;
+  font-size: 1.1rem;
 }

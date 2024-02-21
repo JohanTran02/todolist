@@ -1,25 +1,39 @@
+import {v4 as uuidv4} from 'uuid';
+
 type Task = {
     desc : string;
-    id : number;
+    id : string;
 }
+
 const task_input = <HTMLInputElement>document.querySelector(".task-input");
 const task_add = <HTMLButtonElement>document.querySelector(".task-add");
 const task_clear = <HTMLButtonElement>document.querySelector(".task-clear");
-const ul_list = <HTMLUListElement>document.querySelector(".task-list"); 
+const ul_list = <HTMLUListElement>document.querySelector(".task-container"); 
+// let task_array : Task[] = [];
 
-function taskAdd(this : HTMLButtonElement) : void{    
-    let item = `
-    <li class="task-item">
-    <input type="checkbox" class="task-checkbox">
-    <p class="task-desc">${task_input.value}</p>
-    <button class="task-remove"></button>
-    </li>`;
+function taskAdd(this : HTMLButtonElement) : void{
+    if(!task_input.value){
+        return;
+    }
 
-    ul_list.innerHTML += item;
+    const task : Task = {desc: task_input.value,id:uuidv4()};
+
+    renderTask(task);
 }
 
 function taskClear() : void {
     ul_list.innerHTML = "";
+}
+
+function renderTask(task : Task){
+    ul_list.innerHTML += `
+    <li class="task-item">
+    <input type="checkbox" class="task-checkbox ${task.id}">
+    <p class="task-desc">${task.desc}</p>
+    <button class="task-remove">X</button>
+    </li>`;
+
+    task_input.value = "";
 }
 
 task_add.addEventListener("click", taskAdd);

@@ -21,3 +21,7 @@ body{
   gap: 20px;
   height: 300px;
 }
+
+span{
+  white-space: pre-wrap;
+}

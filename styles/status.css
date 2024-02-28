@@ -1,0 +1,10 @@
+/* Gör som en navbar för olika status på uppgiftera */
+/* Not Started, Work In Progess och Finished ? */
+/* Gör som Jira Kanbanboard */
+
+.status-container {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}

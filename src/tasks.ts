@@ -12,17 +12,20 @@ function addTask(this: HTMLButtonElement): void {
     renderTask(task);
 }
 
-function clearTask(): void {
-    variables.ul_list.innerHTML = "";
-}
+// function clearTask(): void {
+//     variables.ul_list.innerHTML = "";
+// }
 
 function renderTask(task: Task) {
-    variables.ul_list.innerHTML += `
-    <li class="task-item ${task.id}">
-    <input type="checkbox" class="task-checkbox">
-    <span class="task-desc">${task.desc.replace(/(<[^>]+>)/gi, "")}</span>
-    <button class="task-remove">X</button>
-    <button class="task-edit">Edit</button>
+    const not_started = variables.ul_lists[0];
+    not_started.innerHTML += `
+    <li id="${task.id}" class="task-item" draggable="true">
+        <input type="checkbox" class="task-checkbox">
+        <span class="task-desc">${task.desc.replace(/(<[^>]+>)/gi, "")}</span>
+        <div class="task-buttons">
+            <button class="task-remove">X</button>
+            <button class="task-edit">Edit</button>
+        </div>
     </li>`;
 
     variables.task_input.value = "";
@@ -30,7 +33,7 @@ function renderTask(task: Task) {
 
 function initTaskFuncs() {
     variables.task_add.addEventListener("click", addTask);
-    variables.task_clear.addEventListener("click", clearTask);
+    // variables.task_clear.addEventListener("click", clearTask);
 }
 
 export { initTaskFuncs }

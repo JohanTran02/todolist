@@ -13,7 +13,7 @@ function taskFilter(target_text: string) {
     //Visa sökningen som stämmer 
     [...task_items].map(item => {
         const li_element = item.closest("li");
-        (<HTMLLIElement>li_element).style.display = String(item.textContent).includes(target_text) || (<HTMLLIElement>li_element).classList[1].includes(target_text) ? "flex" : "none";
+        (<HTMLLIElement>li_element).style.display = String(item.textContent).includes(target_text) || (<HTMLLIElement>li_element).id.includes(target_text) ? "flex" : "none";
     });
 }
 

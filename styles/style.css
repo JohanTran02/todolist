@@ -1,13 +1,14 @@
-@import 'input.css';
-@import 'tasks.css';
+@import "menu.css";
+@import "tasks.css";
+@import "status.css";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   display: grid;
   place-content: center;
   height: 100vh;
@@ -15,13 +16,14 @@ body{
   background-color: #2d87dd;
 }
 
-.todo-container{
+.todo-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 300px;
+  gap: 15px;
+  height: 450px;
+  width: 800px;
 }
 
-span{
+span {
   white-space: pre-wrap;
 }

@@ -11,13 +11,31 @@
 
 <body>
     <div class="todo-container">
-        <div class="input-container">
-            <input class="task-input" type="text" placeholder="Add a task...">
-            <input class="task-search" type="text" placeholder="Search a task...">
-            <button class="task-add">Add Task</button>
-            <button class="task-clear">Clear Tasks</button>
+        <div class="menu-container">
+            <div class="input-container">
+                <input class="task-input" type="text" placeholder="Add a task...">
+                <input class="task-search" type="text" placeholder="Search a task...">
+            </div>
+            <div class="button-container">
+                <button class="task-add">Add Task</button>
+                <button class="task-clear">Clear Tasks</button>
+            </div>
         </div>
-        <ul class="task-container"></ul>
+
+        <div class="status-container">
+            <div class="tasks">
+                <h2 data-status="Not Started"></h2>
+                <ul id="not-started" class="task-container"></ul>
+            </div>
+            <div class="tasks">
+                <h2 data-status="Work In Progress"></h2>
+                <ul id="wip" class="task-container"></ul>
+            </div>
+            <div class="tasks">
+                <h2 data-status="Finished"></h2>
+                <ul id="finished" class="task-container"></ul>
+            </div>
+        </div>
     </div>
 </body>
 

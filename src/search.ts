@@ -1,14 +1,25 @@
 import { variables } from "./variables";
 
 export function taskSearch(): void {
-    variables.task_search.addEventListener("input", (event) => {
-        const target_text = (<HTMLInputElement>event.target).value;
-        taskFilter(target_text);
+    variables.tasks.forEach(task => {
+        const ul_list = <HTMLUListElement>task.querySelector(".task-container");
+        const task_function = <HTMLDivElement>task.querySelector(".task-functions");
+        task_function.addEventListener("input", function (event) {
+            const target_text = (<HTMLInputElement>event.target).value;
+            taskFilter(target_text, ul_list);
+        })
+
+        task_function.addEventListener("click", function (event) {
+            const target = (<HTMLButtonElement>event.target);
+            if (!target) return;
+
+            if (target.classList.contains("task-delete")) ul_list.innerHTML = "";
+        })
     })
 }
 
-function taskFilter(target_text: string) {
-    const task_items = document.querySelectorAll<HTMLSpanElement>(".task-item > span");
+function taskFilter(target_text: string, ul_list: HTMLUListElement) {
+    const task_items = ul_list.querySelectorAll<HTMLSpanElement>(".task-item > span");
 
     //Visa sökningen som stämmer 
     [...task_items].map(item => {

@@ -12,10 +12,11 @@
   gap: 15px;
 }
 
-.button-container > button {
+.button-container button {
   padding: 10px;
   background-color: #2448bc;
   border: none;
   border-radius: 3px;
+  font-size: 1rem;
   color: white;
 }

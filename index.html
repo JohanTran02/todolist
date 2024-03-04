@@ -6,22 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todolist</title>
     <script type="module" src="src/main.ts" defer></script>
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/fdb8641d55.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="input-container">
-        <input type="text" placeholder="Add a task...">
-        <button class="task-button"></button>
-    </div>
+    <div class="todo-container">
+        <div class="menu-container">
+            <div class="input-container">
+                <input class="task-input" type="text" placeholder="Add a task...">
+            </div>
+            <div class="button-container">
+                <button class="task-add">Add Task</button>
+            </div>
+        </div>
 
-    <ul class="task-list">
-        <li class="task-item">
-            <input type="checkbox">
-            <p class="task-text">Vakna kl 6</p>
-            <button class="task-remove"></button>
-        </li>
-    </ul>
+        <div class="status-container">
+            <div class="tasks">
+                <div class="task-header">
+                    <h2 data-status="Not Started"></h2>
+                </div>
+                <ul id="not-started" class="task-container"></ul>
+                <div class="task-functions">
+                    <input class="task-search" type="text" placeholder="Search a task...">
+                    <button class="task-delete">Delete Tasks</button>
+                </div>
+            </div>
+            <div class="tasks">
+                <div class="task-header">
+                    <h2 data-status="Work In Progress"></h2>
+                </div>
+                <ul id="wip" class="task-container"></ul>
+                <div class="task-functions">
+                    <input class="task-search" type="text" placeholder="Search a task...">
+                    <button class="task-delete">Delete Tasks</button>
+                </div>
+            </div>
+            <div class="tasks">
+                <div class="task-header">
+                    <h2 data-status="Finished"></h2>
+                </div>
+                <ul id="finished" class="task-container"></ul>
+                <div class="task-functions">
+                    <input class="task-search" type="text" placeholder="Search a task...">
+                    <button class="task-delete">Delete Tasks</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
